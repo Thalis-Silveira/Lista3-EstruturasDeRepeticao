@@ -1,10 +1,12 @@
-"""
-#Programa que  carregue uma lista de 5 carros/ ex: FUSCA, GOL, VECTRA 
-carregar outra lista com o consumo deles(quantos quilômetros cada um desses carros faz com um litro de combustível)
+carros = ["FUSCA","GOL","UNO","VECTRA","PEUGEOUT"]
+consumo = [7.0,10.0,12.5,9,14.5]
+gasolina = 2.25
+eco = []
+valPerMil = gasolina * 1000
+litrosGastos = []
 
-saida:
+eco.append(carros[consumo.index(max(consumo))])
+for j in range(len(consumo)):
+    print("{} - {} - {:.2f} - {:.2f} litros - R$ {:.2f}".format(j + 1,carros[j],consumo[j],(valPerMil/consumo[j])/gasolina,valPerMil/consumo[j]))
 
-•	O modelo do carro mais econômico;
-•	Quantos litros de combustível cada um dos carros cadastrados consome para percorrer uma distância de 1000 quilômetros e quanto isto custará,
-    considerando um que a gasolina custe R$ 2,25 o litro
-"""
+print(f"o menor consumo é do{eco}")
