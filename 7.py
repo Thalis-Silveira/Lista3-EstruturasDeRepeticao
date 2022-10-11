@@ -1,15 +1,36 @@
-"""
-cada funcionario recebera 20% do salario bruto
-o piso do abono é 100$(salarios muito baixo recebem esse valor minimo)
-entrada: 
-    -digitação do salario(de um numero indefinido de salarios)
-#salario = 0 encerra a aplicação
+cont = "S"
+salarios = []
+sal = []
+abonos = []
+maior = 0
+menor = 0
+salario = float(input("Salário: "))
+while(salario != 0):
+    if(salario < 1000):
+        sal.append(salario)
+        abono = 100
+        abonos.append(abono)
+        salario += abono
+        salarios.append(salario)
+        menor+=1
+    elif(salario >= 1000):
+        sal.append(salario)
+        abono = (salario * 0.2)
+        abonos.append(abono)
+        salario += abono
+        salarios.append(salario)
+    else:
+        print("Valor não permitido!!!")
 
-#final apresentar:
-◦	O salário de cada funcionário, juntamente com o valor do abono;
-◦	O número total de funcionário processados;
-◦	O valor total a ser gasto com o pagamento do abono;
-◦	O número de funcionário que receberá o valor mínimo de 100 reais;
-◦	O maior valor pago como abono
+    salario = float(input("Salário: "))
+for i in range(len(salarios)):
+    if(salarios[i] > maior):
+        maior = abonos[i]
 
-"""
+print("salarios:")
+for i in range(len(sal)):
+    print(f"Salarios: \t{sal[i]}\tAbono: \t{abonos[i]}\tSalario + abono R$ {salarios[i]}")
+
+print(f"Foram processados {len(abonos)} abonos\nTotal gasto com abonos:  R$ {sum(abonos)}\nValor minimo pago a {menor}\nMaior valor: {maior}")
+
+ 
